@@ -63,6 +63,11 @@ class ListingsController < ApplicationController
       @listing = Listing.find(params[:id])
     end
 
+    def set_form_vars
+      @categories = Category.all
+      @conditions = Listing.conditions.keys 
+    end 
+
     # Only allow a list of trusted parameters through.
     def listing_params
       params.require(:listing).permit(:title, :description, :condition, :price, :user_id, :category_id)

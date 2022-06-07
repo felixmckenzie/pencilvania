@@ -74,7 +74,7 @@ class ListingsController < ApplicationController
       if @listing.user_id != current_user.id
         flash[:alert] = "You are not permitted to do that"
         redirect_to listings_path
-
+      end
     end
 
     # Only allow a list of trusted parameters through.
